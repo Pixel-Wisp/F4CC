@@ -1,0 +1,10 @@
+<fomod> 
+	<Name>Fallout 4 Crowd Control</Name> 
+	<Author>Developed by the kmrkle.tv community.</Author> 
+	<Version MachineVersion="2.0.108">2.0</Version> 
+	<Description>Discover the ultimate Fallout 4 Crowd Control MOD, an innovative addition that revolutionizes your streaming experience by allowing viewers to actively participate in your gameplay. Immerse your community in the heart of your Wasteland adventures with real-time interaction and unpredictable excitement.</Description> 
+    <Website>https://f4cc.kmrkle.tv</Website>
+	<Groups>
+		<element>Miscellaneous</element>
+	</Groups> 
+</fomod> 
