@@ -1,7 +1,7 @@
 # Fallout 4 Crowd Control MOD
 This repository holds the source code of the F4CC mod.
 
-For information about this MOD and how to use it see: [f4cc.kmrkle.tv](https://f4cc.kmrkle.tv)
+For information about this MOD and how to use it see: [f4cc.kmrkle.tv/installation](https://f4cc.kmrkle.tv/installation)
 
 ## Prerequisites
 To compile this MOD, you will need the following prerequisites installed:
@@ -52,10 +52,6 @@ After building the MOD for the first time, all of the necessary files will be pl
 ### Source Code
 
 The source code of this project is © 2023 kmrkle.tv community licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Binary Distribution
-
-The binary distribution of this project (which is available at [f4cc.kmrkle.tv](https://f4cc.kmrkle.tv)) is licensed under the [Creative Commons Attribution-NoDerivatives 4.0 International Public License](http://creativecommons.org/licenses/by-nd/4.0/).
 
 ## Credits
 
