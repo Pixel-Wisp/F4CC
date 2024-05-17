@@ -1,5 +1,5 @@
 ﻿// Based on code by Superxwolf, originally licensed under the MIT License.
-// Copyright (c) 2023 kmrkle.tv community. All rights reserved.
+// Copyright (c) 2024 kmrkle.tv community. All rights reserved.
 //
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
@@ -732,8 +732,26 @@ void OnF4SEMessage(F4SEMessagingInterface::Message* msg) {
 	}
 }
 
+//bool RegisterScaleform(GFxMovieView* view, GFxValue* f4se_root) {
+//	return true;
+//}
+
 extern "C" {
-	bool F4SEPlugin_Query(const F4SEInterface* f4se, PluginInfo* a_info)
+	F4SEPluginVersionData F4SEPlugin_Version =
+	{
+		F4SEPluginVersionData::kVersion,
+
+		CC_VERSION_MAJOR,
+		"CrowdControlPlugin",
+		"",
+
+		0,
+		0,
+		{ RUNTIME_VERSION_1_10_163, RUNTIME_VERSION_1_10_980, RUNTIME_VERSION_1_10_984, 0 },
+		0,
+	};
+
+	bool F4SEPlugin_Preload(const F4SEInterface* f4se)
 	{
 		gLog.OpenRelative(CSIDL_MYDOCUMENTS, "\\My Games\\Fallout4\\F4SE\\CrowdControl.log");
 		gLog.SetPrintLevel(IDebugLog::kLevel_DebugMessage);
@@ -742,52 +760,40 @@ extern "C" {
 #else
 		gLog.SetLogLevel(IDebugLog::kLevel_Message);
 #endif
-		
+
 
 		_MESSAGE("CrowdControl Plugin v%s", CC_VERSION);
-
-		a_info->infoVersion = PluginInfo::kInfoVersion;
-		a_info->name = "CrowdControlPlugin";
-		a_info->version = CC_VERSION_MAJOR;
-
-		if (f4se->isEditor) {
-			_FATALERROR("[FATAL ERROR] Loaded in editor, marking as incompatible!\n");
-			return false;
-		} else if (f4se->runtimeVersion < RUNTIME_VERSION_1_10_163) {
-			_FATALERROR("[FATAL ERROR] Unsupported runtime version %08X!\n", f4se->runtimeVersion);
-			return false;
-		}
-
-		g_pluginHandle = f4se->GetPluginHandle();
-
-		// Get the messaging interface
-		g_messaging = (F4SEMessagingInterface*)f4se->QueryInterface(kInterface_Messaging);
-		if (!g_messaging) {
-			_FATALERROR("couldn't get messaging interface");
-			return false;
-		}
-
-		g_papyrus = (F4SEPapyrusInterface*)f4se->QueryInterface(kInterface_Papyrus);
-		if (!g_papyrus) {
-			_FATALERROR("couldn't get papyrus interface");
-			return false;
-		}
-
-		g_scaleform = (F4SEScaleformInterface*)f4se->QueryInterface(kInterface_Scaleform);
-		if (!g_scaleform) {
-			_FATALERROR("couldn't get scaleform interface");
-			return false;
-		}
 
 		return true;
 	}
 
-	bool F4SEPlugin_Load(const F4SEInterface* a_f4se)
+	bool F4SEPlugin_Load(const F4SEInterface* f4se)
 	{
-		_MESSAGE("Plugin loaded");
+		_MESSAGE("Plugin loading...");
 
 		try
 		{
+			g_pluginHandle = f4se->GetPluginHandle();
+
+			// Get the messaging interface
+			g_messaging = (F4SEMessagingInterface*)f4se->QueryInterface(kInterface_Messaging);
+			if (!g_messaging) {
+				_FATALERROR("couldn't get messaging interface");
+				return false;
+			}
+
+			g_papyrus = (F4SEPapyrusInterface*)f4se->QueryInterface(kInterface_Papyrus);
+			if (!g_papyrus) {
+				_FATALERROR("couldn't get papyrus interface");
+				return false;
+			}
+
+			g_scaleform = (F4SEScaleformInterface*)f4se->QueryInterface(kInterface_Scaleform);
+			if (!g_scaleform) {
+				_FATALERROR("couldn't get scaleform interface");
+				return false;
+			}
+
 			LoadIdToNameMap();
 
 			connector = new Connector();
@@ -799,6 +805,8 @@ extern "C" {
 			if (g_messaging) {
 				g_messaging->RegisterListener(g_pluginHandle, "F4SE", OnF4SEMessage);
 			}
+
+			_MESSAGE("Plugin loaded");
 		}
 		catch (std::exception e)
 		{

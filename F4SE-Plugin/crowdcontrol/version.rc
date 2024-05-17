@@ -21,7 +21,7 @@ BEGIN
             VALUE "FileDescription", "A plugin for F4SE enabling CrowdControl support."
 			VALUE "FileVersion", MYFP_VERSION_VERSTRING
             VALUE "InternalName", "F4SE CrowdControl Plugin"
-            VALUE "LegalCopyright", "(C) 2023 kmrkle.tv community"
+            VALUE "LegalCopyright", "(C) 2024 kmrkle.tv community"
             VALUE "ProductName", "F4SE CrowdControl Plugin"
 			VALUE "ProductVersion", MYFP_VERSION_VERSTRING
         END

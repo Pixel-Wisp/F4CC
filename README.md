@@ -11,10 +11,10 @@ To compile this MOD, you will need the following prerequisites installed:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) (any edition).
     - Installation workload: *Desktop Development with C++*
 - [.NET Framework 3.5 runtime](https://dotnet.microsoft.com/en-us/download/dotnet-framework) (for the Papyrus compiler)
-- Steam version of Fallout 4 (1.10.163).
-- Steam version of Fallout 4: Creation Kit (1.10.162.0).
+- Steam version of Fallout 4 (1.10.984).
+- Steam version of Fallout 4: Creation Kit (1.10.982.3).
 - [7-Zip](https://www.7-zip.org/) (x64) binary for packaging the FOMOD.
-- *(optional) [F4SE](https://f4se.silverlock.org/) (0.6.23) installed into Fallout 4 for running / debugging the MOD*.
+- *(optional) [F4SE](https://f4se.silverlock.org/) (0.7.2) installed into Fallout 4 for running / debugging the MOD*.
 
 ## Configure
 You will need to make the following edits to set up the build environment:
@@ -37,7 +37,7 @@ You will need to make the following edits to set up the build environment:
    This will allow you to debug the Papyrus scripts by simply editing them and then running `\Papyrus\build.cmd`. -->
 
 ## Building
-- Make sure to start Fallout 4 at least once, otherwise Creation Kit will not open.
+- Make sure to start Fallout 4 at least once, otherwise Creation Kit may not open.
 
 - Make sure to start the Fallout 4 Creation Kit at least once and unpack the base scripts when prompted.
 
@@ -51,7 +51,7 @@ After building the MOD for the first time, all of the necessary files will be pl
 
 ### Source Code
 
-The source code of this project is © 2023 kmrkle.tv community licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+The source code of this project is © 2024 kmrkle.tv community licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Credits
 

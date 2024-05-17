@@ -4,6 +4,10 @@
 RELEASE
 =======
 
+2.0.0.109
+---------
+* Fallout 4 1.10.984, Creation Kit 1.10.982.3, and F4SE 0.7.2 compatibility.
+
 2.0.0.108
 ---------
 * CrowdControl 2.0 compatibility.

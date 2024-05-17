@@ -83,9 +83,9 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 
 cd /D %CompilerPath%
 if %errorlevel% neq 0 exit /b %errorlevel%
-PapyrusCompiler.exe "%CrowdControlPath%CrowdControlApi.psc" -f="Institute_Papyrus_Flags.flg" -i="%FalloutPath%\Data\Scripts\Source;%FalloutPath%\Data\Scripts\Source\User;%FalloutPath%\Data\Scripts\Source\Base" -o="%FalloutPath%\Data\Scripts" -r -op
+PapyrusCompiler.exe "%CrowdControlPath%CrowdControlApi.psc" -f="Institute_Papyrus_Flags.flg" -i="%FalloutPath%\Data\Scripts\Source;%FalloutPath%\Data\Scripts\Source\User;%FalloutPath%\Data\Scripts\Source\Base" -o="%FalloutPath%\Data\Scripts" -op
 if %errorlevel% neq 0 exit /b %errorlevel%
-PapyrusCompiler.exe "%CrowdControlPath%CrowdControl.psc" -f="Institute_Papyrus_Flags.flg" -i="%FalloutPath%\Data\Scripts\Source;%FalloutPath%\Data\Scripts\Source\User;%FalloutPath%\Data\Scripts\Source\Base" -o="%FalloutPath%\Data\Scripts" -r -op
+PapyrusCompiler.exe "%CrowdControlPath%CrowdControl.psc" -f="Institute_Papyrus_Flags.flg" -i="%FalloutPath%\Data\Scripts\Source;%FalloutPath%\Data\Scripts\Source\User;%FalloutPath%\Data\Scripts\Source\Base" -o="%FalloutPath%\Data\Scripts" -op
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 SETLOCAL EnableDelayedExpansion

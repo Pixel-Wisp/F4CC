@@ -16,11 +16,11 @@
 #define LOG_INPUT_HOOK 0
 
 typedef void (* _CreateMenuControlHandlers)(MenuControls * mem);
-RelocAddr <_CreateMenuControlHandlers> CreateMenuControlHandlers(0x012A80F0);
+RelocAddr <_CreateMenuControlHandlers> CreateMenuControlHandlers(0x00FEDDA0);
 _CreateMenuControlHandlers CreateMenuControlHandlers_Original = nullptr;
 
 typedef void (* _CreatePlayerControlHandlers)(PlayerControls * mem);
-RelocAddr <_CreatePlayerControlHandlers> CreatePlayerControlHandlers(0x00F44CC0);
+RelocAddr <_CreatePlayerControlHandlers> CreatePlayerControlHandlers(0x00D56C60);
 _CreatePlayerControlHandlers CreatePlayerControlHandlers_Original = nullptr;
 
 #if HOOK_RAW_INPUT
@@ -142,6 +142,20 @@ void HandleButtonEvent(ButtonEvent * inputEvent)
 			SendPapyrusEvent1<BSFixedString>(reg.handle, reg.scriptName, "OnControlDown", control);
 		}
 		);
+
+		if (deviceType == InputEvent::kDeviceType_Gamepad)
+		{
+			g_inputKeyEventRegs.ForEach(
+				keyMask,
+				[&keyMask](const EventRegistration<NullParameters>& reg)
+				{
+					SendPapyrusEvent1<UInt32>(reg.handle, reg.scriptName, "OnGamepadButtonDown", keyMask);
+				}
+			);
+		}
+
+
+
 	}
 	else if (isUp)
 	{
@@ -159,6 +173,21 @@ void HandleButtonEvent(ButtonEvent * inputEvent)
 			SendPapyrusEvent2<BSFixedString, float>(reg.handle, reg.scriptName, "OnControlUp", control, timer);
 		}
 		);
+
+		if (deviceType == InputEvent::kDeviceType_Gamepad)
+		{
+			g_inputGamepadButtonEventRegs.ForEach(
+				keyMask,
+				[&keyMask, &timer](const EventRegistration<NullParameters>& reg)
+				{
+					SendPapyrusEvent2<UInt32, float>(reg.handle, reg.scriptName, "OnGamepadButtonUp", keyMask, timer);
+				}
+			);
+
+		}
+
+
+
 	}
 }
 
@@ -261,7 +290,7 @@ void Hooks_Input_Commit()
 			{
 				Xbyak::Label retnLabel;
 
-				mov(ptr[rsp+0x08], rbx);
+				mov(ptr[rsp+0x10], rbx);
 
 				jmp(ptr [rip + retnLabel]);
 

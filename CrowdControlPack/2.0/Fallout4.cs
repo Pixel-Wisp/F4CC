@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using CrowdControl.Common;
 
-namespace CrowdControl.Games.Packs
+namespace CrowdControl.Games.Packs.Fallout4
 {
     public class Fallout4 : SimpleTCPPack
     {
@@ -243,8 +243,8 @@ namespace CrowdControl.Games.Packs
             new Effect("House Cat", $"playerplaceactoratme_crowdcontrol__{0x006332}_1_0_0_0_{neutralSpawnDistance}_crowdcontrol__{0x00AE60}") { Price = GetPrice(10), Category = "Spawn Neutral NPC" },
             new Effect("Brahmin", $"playerplaceactoratme_{0x00020480}_1_0_0_0_{neutralSpawnDistance}_crowdcontrol__{0x00AE61}") { Price = GetPrice(10), Category = "Spawn Neutral NPC" },
             new Effect("Gazelle", $"playerplaceactoratme_dlcnukaworld__{0x00D35B}_1_0_0_0_{neutralSpawnDistance}_crowdcontrol__{0x00AE62}") { Price = GetPrice(10), Category = "Spawn Neutral NPC" },
-            new Effect("Rad Rabbits (10)", $"playerplaceactoratme_dlccoast__{0x03DDE2}_10_0_0_0_{neutralSpawnDistance}_{0xC1AD1}") { Price = GetPrice(20), SessionCooldiown = SITimeSpan.FromSeconds(10), Category = "Spawn Neutral NPC" },
-            new Effect("Rad Chickens (5)", $"playerplaceactoratme_dlccoast__{0x03FD6A}_5_0_0_0_{neutralSpawnDistance}_crowdcontrol__{0x00F1E6}") { Price = GetPrice(20), SessionCooldiown = SITimeSpan.FromSeconds(5), Category = "Spawn Neutral NPC" },
+            new Effect("Rad Rabbits (10)", $"playerplaceactoratme_dlccoast__{0x03DDE2}_10_0_0_0_{neutralSpawnDistance}_{0xC1AD1}") { Price = GetPrice(20), SessionCooldown = SITimeSpan.FromSeconds(10), Category = "Spawn Neutral NPC" },
+            new Effect("Rad Chickens (5)", $"playerplaceactoratme_dlccoast__{0x03FD6A}_5_0_0_0_{neutralSpawnDistance}_crowdcontrol__{0x00F1E6}") { Price = GetPrice(20), SessionCooldown = SITimeSpan.FromSeconds(5), Category = "Spawn Neutral NPC" },
 
             #endregion
 
@@ -258,7 +258,7 @@ namespace CrowdControl.Games.Packs
             new Effect("Legendary Glowing Ones (2)", $"playerplaceactoratme_1463670_2_0_0_0_{hostileSpawnDistanceFar}") { Price = GetPrice(60), Category = "Spawn Hostile NPC" },
             new Effect("Raiders (4)", $"playerplaceactoratme_166283_4_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(20), Category = "Spawn Hostile NPC" },
             new Effect("Gunners (4)", $"playerplaceactoratme_911721_4_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
-            new Effect("Feral Ghoul Horde (30)", "playerplaceactoratme_480055_30") { Price = GetPrice(100), SessionCooldiown = SITimeSpan.FromMinutes(4), Category = "Spawn Hostile NPC" },
+            new Effect("Feral Ghoul Horde (30)", "playerplaceactoratme_480055_30") { Price = GetPrice(100), SessionCooldown = SITimeSpan.FromMinutes(4), Category = "Spawn Hostile NPC" },
             new Effect("Synths (3)", $"playerplaceactoratme_480058_3_0_0_2_{hostileSpawnDistance}") { Price = GetPrice(30), Category = "Spawn Hostile NPC" },
             new Effect("Courser", $"playerplaceactoratme_1452270_1_0_0_2_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
             new Effect("Mr. Gutsys (2)", $"playerplaceactoratme_955027_2_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
@@ -274,7 +274,7 @@ namespace CrowdControl.Games.Packs
 
             new Effect("Brahmiluff Longhorn", $"playerplaceactoratme_dlcnukaworld__{0x00D353}_1_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(10), Category = "Spawn Hostile NPC" },
             new Effect("Ghoulrilla", $"playerplaceactoratme_dlcnukaworld__{0x00D347}_1_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(10), Category = "Spawn Hostile NPC" },
-            new Effect("Rad-rats (10)", $"playerplaceactoratme_dlcnukaworld__{0x0201EC}_10_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), SessionCooldiown = SITimeSpan.FromMinutes(1), Category = "Spawn Hostile NPC" },
+            new Effect("Rad-rats (10)", $"playerplaceactoratme_dlcnukaworld__{0x0201EC}_10_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), SessionCooldown = SITimeSpan.FromMinutes(1), Category = "Spawn Hostile NPC" },
             new Effect("Plagued Rad-rats (3)", $"playerplaceactoratme_dlcnukaworld__{0x03B8A6}_3_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(60), Category = "Spawn Hostile NPC" },
             new Effect("Gatorclaws (2)", $"playerplaceactoratme_dlcnukaworld__{0x00D357}_2_0_1_0_{hostileSpawnDistance}") { Price = GetPrice(60), Description = "Gatorclaws can only be spawned outdoors.", Category = "Spawn Hostile NPC" },
             new Effect("Soldier Ants (5)", $"playerplaceactoratme_dlcnukaworld__{0x0201EA}_5_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
@@ -283,7 +283,7 @@ namespace CrowdControl.Games.Packs
             new Effect("Cave Crickets (5)", $"playerplaceactoratme_dlcnukaworld__{0xAB02}_5_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
             new Effect("Glowing Cave Crickets (5)", $"playerplaceactoratme_dlcnukaworld__{0x0201E5}_5_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(60), Category = "Spawn Hostile NPC" },
             new Effect("Nukalurk Queen", $"playerplaceactoratme_dlcnukaworld__{0x3d661}_1_0_1_2_{hostileSpawnDistance}") { Price = GetPrice(200), Description = "Nukalurk Queen can only be spawned outdoors.", Category = "Spawn Hostile NPC" },
-            new Effect("Bloodworms (5)", $"playerplaceactoratme_dlcnukaworld__{0xa1a7}_5_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(20), SessionCooldiown = SITimeSpan.FromMinutes(1), Category = "Spawn Hostile NPC" },
+            new Effect("Bloodworms (5)", $"playerplaceactoratme_dlcnukaworld__{0xa1a7}_5_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(20), SessionCooldown = SITimeSpan.FromMinutes(1), Category = "Spawn Hostile NPC" },
             new Effect("Nukatrons (2)", $"playerplaceactoratme_dlcnukaworld__{0x01F5F9}_2_0_0_2_{hostileSpawnDistance}") { Price = GetPrice(20), Category = "Spawn Hostile NPC" },
             new Effect("Galactrons (2)", $"playerplaceactoratme_dlcnukaworld__{0x03290A}_2_0_0_2_{hostileSpawnDistance}") { Price = GetPrice(30), Category = "Spawn Hostile NPC" },
             new Effect("Astro-Gutsys (2)", $"playerplaceactoratme_dlcnukaworld__{0x01FAF4}_2_0_0_0_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Hostile NPC" },
@@ -324,11 +324,11 @@ namespace CrowdControl.Games.Packs
             new Effect("Deathclaw", $"playerplaceactoratme_480056_1_0_1_1_{hostileSpawnDistance}") { Price = GetPrice(100), Description = "A deathclaw can only be spawned outdoors.", Category = "Spawn Friendly NPC" },
             new Effect("Behemoth", $"playerplaceactoratme_1227134_1_0_1_1_{hostileSpawnDistance}") { Price = GetPrice(200), Description = "A behemoth can only be spawned outdoors.", Category = "Spawn Friendly NPC" },
 
-            new Effect("Rad-rats (5)", $"playerplaceactoratme_dlcnukaworld__{0x0201EC}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(30), SessionCooldiown = SITimeSpan.FromMinutes(1), Category = "Spawn Friendly NPC" },
+            new Effect("Rad-rats (5)", $"playerplaceactoratme_dlcnukaworld__{0x0201EC}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(30), SessionCooldown = SITimeSpan.FromMinutes(1), Category = "Spawn Friendly NPC" },
             new Effect("Gatorclaws (2)", $"playerplaceactoratme_dlcnukaworld__{0x00D357}_2_0_1_1_{hostileSpawnDistance}") { Price = GetPrice(60), Description = "Gatorclaws can only be spawned outdoors.", Category = "Spawn Friendly NPC" },
             new Effect("Soldier Ants (5)", $"playerplaceactoratme_dlcnukaworld__{0x0201EA}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Friendly NPC" },
             new Effect("Cave Crickets (5)", $"playerplaceactoratme_dlcnukaworld__{0xAB02}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Friendly NPC" },
-            new Effect("Bloodworms (5)", $"playerplaceactoratme_dlcnukaworld__{0xa1a7}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(20), SessionCooldiown = SITimeSpan.FromMinutes(1), Category = "Spawn Friendly NPC" },
+            new Effect("Bloodworms (5)", $"playerplaceactoratme_dlcnukaworld__{0xa1a7}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(20), SessionCooldown = SITimeSpan.FromMinutes(1), Category = "Spawn Friendly NPC" },
             new Effect("Nukatrons (5)", $"playerplaceactoratme_dlcnukaworld__{0x01F5F9}_5_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(20), Category = "Spawn Friendly NPC" },
             new Effect("Galactrons (3)", $"playerplaceactoratme_dlcnukaworld__{0x03290A}_3_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(20), Category = "Spawn Friendly NPC" },
             new Effect("Astro-Gutsys (2)", $"playerplaceactoratme_dlcnukaworld__{0x01FAF4}_2_0_0_1_{hostileSpawnDistance}") { Price = GetPrice(40), Category = "Spawn Friendly NPC" },

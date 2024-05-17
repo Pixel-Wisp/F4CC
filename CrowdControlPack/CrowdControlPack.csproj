@@ -31,20 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConnectorLib">
-      <HintPath>.\DLLs\ConnectorLib.dll</HintPath>
-    </Reference>
-    <Reference Include="ConnectorLib.Inject">
-      <HintPath>.\DLLs\ConnectorLib.Inject.dll</HintPath>
-    </Reference>
-    <Reference Include="ConnectorLib.IRC">
-      <HintPath>.\DLLs\ConnectorLib.IRC.dll</HintPath>
-    </Reference>
-    <Reference Include="ConnectorLib.sd2snes">
-      <HintPath>.\DLLs\ConnectorLib.sd2snes.dll</HintPath>
+    <Reference Include="ConnectorLib, Version=5.0.8563.22651, Culture=neutral, PublicKeyToken=ca897302751d5611, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\ConnectorLib.dll</HintPath>
     </Reference>
     <Reference Include="CrowdControl.Common">
       <HintPath>.\DLLs\CrowdControl.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CrowdControl.Extensions">
+      <HintPath>DLLs\CrowdControl.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="CrowdControl.Games">
       <HintPath>.\DLLs\CrowdControl.Games.dll</HintPath>
